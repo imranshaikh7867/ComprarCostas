@@ -1,0 +1,103 @@
+.cart-container{
+    display: flex;
+    justify-content: center;
+}
+.cart-holder{
+    
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    
+}
+.back-anchor{
+    
+    margin: 8px 0px;
+    padding: 5px 2px;
+}
+.back{
+    
+    text-decoration: none;
+    color: green;
+    font-size: 20px;
+    font-weight: bolder;
+    border: 2px solid green;
+    padding: 0px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.placed-checkout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    
+}
+.placed-checkout h3{
+    color: white;
+
+}
+.placed-checkout a{
+    text-decoration: none;
+    color: green;
+    font-size: 18px;
+    font-weight: bolder;
+    border: 2px solid green;
+
+    padding: 0px 5px;
+
+}
+.placed-checkout a:hover{
+    background-color: green;
+    color: white;
+}
+.main-cart{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px 0px;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+.prod-img{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+.prod-img img{
+    width: 100px ;
+    height: 100px;
+    
+    box-shadow: 0px 0px 4px 3px ;
+    margin: 5px 0px;
+}
+.main-cart .main-body{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+
+}
+.main-cart .main-body h4{
+    color: green;
+}
+.cart-btn button{
+    padding: 10px 10px;
+    font-size: 15px;
+    background-color: blue;
+    font-weight: bolder;
+    color: white;
+    border-radius: 5px ;
+    border: none;
+    cursor: pointer;
+}
+.main-cart .main-body p{
+    margin: 7px 0px;
+}
+@media (min-width: 1200px){
+    .prod-img{
+        align-items: center;
+    }
+}

@@ -1,0 +1,81 @@
+.product-page-holder{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px;
+}
+.product-page-holder .product-content{
+    display: flex;
+    flex-direction: row;
+}
+.product-page-holder .product-content .product-main{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+
+    padding: 5px 5px;
+}
+.product-page-holder .product-content .product-main .product-body{
+    padding: 10px 0px;
+}
+.product-page-holder .product-content .product-main .product-main-offer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    border: 1px solid #121212;
+    margin-top: 10px;
+}
+.product-main-offer p{
+    margin: 5px 0px;
+    padding: 0px 5px;
+    font-size: 20px;
+    border-bottom: 1px solid #121212;
+}
+.product-main-offer p span{
+    font-weight: bolder;
+    color: red;
+}
+.product-page-cart{
+    margin-top: 30px;
+
+}
+.product-page-cart p{
+    font-size: 18px;
+}
+.product-photo{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-photo img{
+    width: 35vw;
+}
+.product-offer{
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    width: 17vw;
+}
+.product-offer div{
+    
+    margin: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 3px;
+    padding: 10px 10px;
+}
+.product-offer div p{
+    margin: 2px 0px;
+}
+.product-offer div button{
+    padding: 4px 8px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

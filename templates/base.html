@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <link rel="stylesheet" href="{% static 'css/cart.css'%}">
+    <link rel="stylesheet" href="{% static 'css/checkout.css'%}">
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <link rel="stylesheet" href="{% static 'css/product_page.css'%}">
+    <link rel="stylesheet" href="{% static 'css/signup.css'%}">
+    {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> {% endcomment %}
+    {% block css %}{% endblock css %}
+    
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="main-container">
+            <div class="logo">
+                <a href="/">Store</a>
+            </div>
+            <div class="nav-search">
+                <input type="text" name="search" placeholder="Search Here">
+                <button type="submit" class="search-btn">Search</button>
+            </div>
+
+            <div class="nav-main-container">
+                {% if user.is_authenticated %}
+                <div class="nav-signup">
+                    <a href="/logout" class="signup-tag">LogOut</a>
+                </div>
+                <div class="nav-signup">
+                    <a href="/tracker/" class="signup-tag">Tracker</a>
+                </div>
+                {% else %}
+                <div class="nav-login">
+                    <a href="/signup" class="login-tag">SignUp</a>
+                </div>
+                <div class="nav-signup">
+                    <a href="/login" class="signup-tag">Login</a>
+                </div>
+                {% endif %}
+                <div class="nav-cart">
+                    <img src="{% static 'img/cart.png'%}" alt="">
+                    <p><a href="/cart">Cart(<span id = "count">0</span>)</a></p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </nav>
+
+    {% block body %}
+
+    {% endblock body %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    {% comment %} <script src="{% static 'js/main.js' %}"></script> {% endcomment %}
+    {% block js %}
+
+    {% endblock js %}
+</body>
+
+</html>

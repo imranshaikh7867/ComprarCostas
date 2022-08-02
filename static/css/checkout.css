@@ -1,0 +1,176 @@
+.checkout-container{
+    
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-holder{
+    width: 70vw;
+    border-radius: 4px;
+    background-color: white;
+    margin: 15px 0px;
+}
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+}
+.checkout-form .form-address{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.form-shipping{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    margin: 2px 2px;
+}
+.checkout-form .form-address .first-part{
+    display: flex;
+    flex-direction: column;
+}
+.checkout-form .form-address .second-part{
+    display: flex;
+    flex-direction: row;
+}
+.form-payment{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    margin: 2px 2px;
+}
+.form-payment .payment-first{
+    display: flex;
+    flex-direction: column;
+}
+.form-payment .payment-second{
+    display: flex;
+    flex-direction: row;
+    
+}
+.col-50{
+    display: flex;
+    flex-direction: column;
+}
+.col-50 label{
+    font-size: 18px;
+    font-weight: bolder;
+}
+.col-50 input{
+    width: 30vw;
+    height: 20px;
+    padding: 7px 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: 'Baloo Bhai 2', cursive;
+    background-color: rgba(0, 0, 0, 0.286);
+    color: white;
+}
+.col-60{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
+.col-60 input{
+    width: 14vw;
+    height: 20px;
+    padding: 7px 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: 'Baloo Bhai 2', cursive;
+    background-color: rgba(0, 0, 0, 0.286);
+    color: white;
+}
+.col-60 label{
+    font-size: 18px;
+    font-weight: bolder;
+}
+h3{
+    font-size: 25px;
+}
+.checkout-submit{
+    width: 66vw;
+    margin: 5px 5px;
+    font-size: 17px;
+    font-weight: bolder;
+    height: 40px;
+    padding: 7px 0px;
+    border-radius: 5px;
+    font-family: 'Baloo Bhai 2', cursive;
+    border: none;
+    background-color: #121212;
+    color: white;
+    cursor: pointer;
+}
+.summary{
+    display: flex;
+    justify-content: center;
+    margin: 5px 0px;
+}
+.summary-holder{
+    width: 69vw;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    padding: 4px 4px;
+}
+.summary-holder h3{
+    margin: 5px 0px;
+}
+.summary-holder .order-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px 10px;
+}
+.image img{
+    width: 100px ;
+    height: 100px;
+    
+    box-shadow: 0px 0px 4px 3px ;
+    margin: 5px 0px;
+}
+
+@media (max-width: 850px){
+    .checkout-form .form-address{
+       display: flex;
+       flex-direction: column;
+    }
+    .checkout-form .form-address .first-part{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .checkout-form .form-address .second-part{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-payment{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-payment .payment-first{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-payment .payment-second{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

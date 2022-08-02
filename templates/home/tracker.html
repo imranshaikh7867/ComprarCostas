@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+CheckoutPage
+{% endblock title %}
+
+{% block body %}
+<div class="checkout-container">
+    <div class="checkout-holder">
+        <form action="" method="post" class="checkout-form" id = "trackerForm">
+            {% csrf_token %}
+            <div class="form-address">
+                <div class="form-shipping">
+                    <div class="first-part">
+                        <h3>Enter Your Order ID and Email to Track Your order</h3>
+                        <hr>
+                        
+                        <div class="col-50">
+                            <label for="fname"><i class="fa fa-user"></i> Order Id</label>
+                            <input type="text" id="fname" name="orderId" placeholder="John M. Doe">
+                        </div>
+                        <div class="col-50">
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="email" id="email" name="orderEmail" placeholder="john@example.com">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <button type="submit" class="checkout-submit">Tracker Order</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="summary">
+    <div class="summary-holder">
+        <h3>Order Summary</h3>
+        <hr>
+        <div id="item">
+            <!-- <div class="image">
+                <img src="{% static 'img/book.jpg'%}" alt="">
+            </div> -->
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock body %}
+
+{% block js %}
+<script>
+    $('#trackerForm').submit(function(event){
+        $('#item').empty();
+        var formData = {
+            'orderId': $('input[name = orderId]').val(),
+            'email': $('input[name = orderEmail]').val(),
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/tracker/',
+            data: formData,
+            encoder: true
+        })
+        .done(function(data){
+            console.log(data)
+        })
+        event.preventDefault();
+    })
+</script>
+
+{% endblock js %}

@@ -1,0 +1,171 @@
+:root{
+    --home-font: 'Baloo Bhai 2', cursive;
+}
+.main-products{
+    background-color: rgb(44, 3, 44);
+    height: 50px;
+    
+}
+.main-product-holder{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
+    justify-content: center;
+}
+.main-product-holder a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+    font-family: var(--home-font);
+    padding: 4px 10px;
+}
+.main-product-holder a:hover{
+    cursor: pointer;
+    border: 1px solid white;
+    
+}
+
+.card-main-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0px 20px;
+    margin-top: 15px;
+    
+}
+.cards{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    box-shadow: 0px 0px 6px 0px;
+    border-radius: 10px;
+    
+}
+.cards img{
+    height: 238px;
+    border-bottom: 2px solid black;
+    background-size: cover;
+    width: 100%;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+    padding-left: 5px;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    width: 100%;
+
+}
+.card-body p{
+    text-align: center;
+    margin: 5px 0px;
+    font-weight: bolder;
+}
+.card-body h3{
+    font-size: 20px;
+    margin: 2px 0px;
+    font-weight: bolder;
+}
+.card-body h4{
+    font-size: 18px;
+    margin: 2px 0px;
+    font-weight: bolder;
+}
+@media (max-width: 1324px){
+    .card-main-container{
+        display: block;
+    }
+}
+
+.footer{
+    
+    margin-top: 20px;
+    
+}
+.footer-container{
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    
+    background-color: #212121;
+}
+.footer-help{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-container a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.footer-container h3{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.card-btn{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 100%;
+    margin: 5px 5px;
+    box-sizing: border-box;
+    width: 20vw;
+    
+}
+.add-cart{
+    font-size: 20px;
+    color: green;
+    border: 2px solid green;
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white;
+}
+.view{
+    font-size: 20px;
+    text-decoration: none;
+    color: green;
+    border: 2px solid green;
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+.minus, .plus{
+    font-size: 20px;
+    color: green;
+    border: 2px solid green;
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white;
+}
+.plus{
+    margin-left: 5px;
+}
+.btnspan{
+    display: flex;
+    flex-direction: row;
+}
+

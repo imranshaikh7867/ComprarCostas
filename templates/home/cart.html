@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+CartPage
+{% endblock title %}
+{% block css %}
+<style>
+    .increment-decrement {
+
+        margin: 15px 2px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .increment-decrement button {
+        width: 2vw;
+        height: 5vh;
+        background-color: blue;
+        border-radius: 5px;
+        border: none;
+        font-weight: bolder;
+        font-size: 25px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .increment-decrement span {
+        margin: 0px 5px;
+    }
+</style>
+{% endblock css %}
+{% block body %}
+<div class="cart-container">
+    <div class="cart-holder">
+        <div class="back-anchor">
+            <a href="/" class="back">
+                Continue Shopping
+            </a>
+        </div>
+
+        <div class="placed-checkout">
+            <h3>Items:-</h3>
+            <h3>Prices:-</h3>
+            <a href="/checkout">Checkout</a>
+
+        </div>
+        <div class="main">
+            <div class="main-cart" id="mainbody">
+                <div class="main-body">
+
+                </div>
+                <!-- <div class="prod-img">
+                    <img src="/media/{{product.image}}" alt="">
+                    <div class = "increment-decrement">
+                        <button id="minus{{product.pk}}">-</button>
+                        <span id="count{{product.pk}}">0</span>
+                        <button id="plus{{product.pk}}">+</button>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class="clearbtn">
+                <button id="clearbtn">Clear Cart</button>
+            </div>
+
+        </div>
+        
+
+    </div>
+</div>
+{% endblock body %}
+
+{% block js %}
+<script>
+    console.log("working");
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    }
+    else{
+        cart = JSON.parse(localStorage.getItem('cart'));
+        
+        
+    }
+    sum = 0;
+    if ($.isEmptyObject(cart)) {
+        mystr = `<h3>No Product in Cart</h3>
+        `
+
+        $('.main-body').append(mystr);
+    } else {
+        
+        for (item in cart){
+            
+            Name = cart[item][1];
+            quantity = cart[item][0];
+            sum = sum + quantity;
+            mystr = `<h3>${Name}</h3>
+            <h4>${quantity}</h4>`
+    
+            $('.main-body').append(mystr);
+        }
+    }
+    document.getElementById('count').innerHTML = sum;
+    clear = document.getElementById('clearbtn');
+    clear.addEventListener('click', function () {
+        localStorage.clear()
+        cart = {}
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('count').innerHTML = Object.keys(cart).length;
+
+    })
+</script>
+
+{% endblock js %}

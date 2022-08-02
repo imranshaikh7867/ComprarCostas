@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+SignupPage
+{% endblock title %}
+
+{% block body %}
+<div class="signup-credentials">
+    <div class="signup-image">
+
+    </div>
+    <div class="signup-container">
+        <div class="signup-holder">
+            <div class="signup-logo">
+                store
+            </div>
+            <hr>
+            <form action="" method="post" class="signup-form">
+                {% csrf_token %}
+                <div class="user-name display">
+                    <label for="">Username</label>
+                    <input type="text" name = "login-username">
+                </div>
+                <div class="password display">
+                    <label for="">Password</label>
+                    <input type="password" name = "login-password">
+                </div>
+                <button type="submit" class="signup-form-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
